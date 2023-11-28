@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "fake-data-generator"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "fake_data_generator", from = "."}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+faker = "^20.1.0"
+sqlalchemy = "^2.0.23"
+asyncpg = "^0.29.0"
+pydantic-settings = "^2.1.0"
+uuid7 = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
