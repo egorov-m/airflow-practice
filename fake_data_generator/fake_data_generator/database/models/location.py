@@ -1,12 +1,11 @@
 from faker import Faker
-from sqlalchemy import Column, Uuid, String, Double
-from uuid_extensions import uuid7
+from sqlalchemy import Column, BigInteger, String, Double
 
 from fake_data_generator.database.core import Base, IGenerator
 
 
 class Location(Base, IGenerator):
-    id = Column(Uuid, default=uuid7, primary_key=True, nullable=False)
+    id = Column(BigInteger, autoincrement=True, primary_key=True, nullable=False)
     country = Column(String(100), nullable=False)
     city = Column(String(100), nullable=False)
     region = Column(String(100), nullable=True)

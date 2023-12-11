@@ -1,0 +1,2 @@
+call etl_process();
+

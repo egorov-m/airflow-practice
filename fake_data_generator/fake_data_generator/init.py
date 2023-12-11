@@ -18,7 +18,7 @@ from fake_data_generator.database.utils import db_metadata_create_all, utcnow
 fdg_logger = logging.getLogger("init_logger")
 
 
-async def init_metadata_db():
+async def init_metadata_db(*args):
     fdg_logger.info("Start init db.")
     await db_metadata_create_all()
     fdg_logger.info("Done metadata create all.")
@@ -33,6 +33,7 @@ async def init_company_branches_and_departments(
 ) -> list[Department]:
     fdg_logger.info("Start init company branches and departments.")
     departments = []
+    chefs = []
     for _ in range(count_company_branches):
         city = fake.city()
         location: Location = await repo.add_base(Location.generate(fake, city=city))
@@ -63,8 +64,10 @@ async def init_company_branches_and_departments(
                     salary=fake.random_int(min=100000, max=400000)
                 )
             )
+            chefs.append(chief)
             department.chief_id = chief.id
             await repo.update_base(department)
+    await init_personnel_records(fake, repo, chefs)
 
     return departments
 

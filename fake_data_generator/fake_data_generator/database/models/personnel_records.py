@@ -1,13 +1,12 @@
 from faker import Faker
-from sqlalchemy import Column, Uuid, ForeignKey, DateTime, Double
-from uuid_extensions import uuid7
+from sqlalchemy import Column, BigInteger, ForeignKey, DateTime, Double
 
 from fake_data_generator.database.core import Base, IGenerator
 from fake_data_generator.database.utils import utcnow
 
 
 class PersonnelRecords(Base, IGenerator):
-    id = Column(Uuid, default=uuid7, primary_key=True, nullable=False)
+    id = Column(BigInteger, autoincrement=True, primary_key=True, nullable=False)
     employee_id = Column(ForeignKey("employee.id"), nullable=False)
     department_id = Column(ForeignKey("department.id"), nullable=False)
     company_branch_id = Column(ForeignKey("company_branch.id"), nullable=False)

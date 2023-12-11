@@ -166,18 +166,10 @@ category = "main"
 optional = false
 python-versions = ">=3.8"
 
-[[package]]
-name = "uuid7"
-version = "0.1.0"
-description = "UUID version 7, generating time-sorted UUIDs with 200ns time resolution and 48 bits of randomness"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.11"
-content-hash = "7b11bd7720ebcb2a726f6f03b11475bcff96ac415a1fc04bfc7799db1f92a814"
+content-hash = "1baf6998d649df4fb4241ca12cef5c2fe1a080ff4b843cd2a67ad06e45c8f2dd"
 
 [metadata.files]
 annotated-types = [
@@ -475,8 +467,4 @@ sqlalchemy = [
 typing-extensions = [
     {file = "typing_extensions-4.8.0-py3-none-any.whl", hash = "sha256:8f92fc8806f9a6b641eaa5318da32b44d401efaac0f6678c9bc448ba3605faa0"},
     {file = "typing_extensions-4.8.0.tar.gz", hash = "sha256:df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"},
-]
-uuid7 = [
-    {file = "uuid7-0.1.0-py2.py3-none-any.whl", hash = "sha256:5e259bb63c8cb4aded5927ff41b444a80d0c7124e8a0ced7cf44efa1f5cccf61"},
-    {file = "uuid7-0.1.0.tar.gz", hash = "sha256:8c57aa32ee7456d3cc68c95c4530bc571646defac01895cfc73545449894a63c"},
 ]

@@ -1,12 +1,11 @@
 from faker import Faker
-from sqlalchemy import Column, Uuid, String
-from uuid_extensions import uuid7
+from sqlalchemy import Column, BigInteger, String
 
 from fake_data_generator.database.core import Base, IGenerator
 
 
 class Position(Base, IGenerator):
-    id = Column(Uuid, default=uuid7, primary_key=True, nullable=False)
+    id = Column(BigInteger, autoincrement=True, primary_key=True, nullable=False)
     name = Column(String(100), nullable=False)
     description = Column(String(400), nullable=False)
 
